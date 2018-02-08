@@ -125,7 +125,8 @@ var app = new Vue({
         },
 
         removeCompleted: function () {
-            this.todos = filters.active(this.todo); // BUG: B
+            this.todos = filters.active(this.todos); // BUG: B
+            // this.todos = filters.active(this.todo); // BUG: B
         }
     },
 

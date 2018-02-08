@@ -12,6 +12,7 @@
     <section class="todoapp">
         <header class="header">
             <h1>todos</h1>
+            <input class="toggle-all" type="checkbox" v-model="allDone">
             <input class="new-todo"
             autofocus autocomplete="off"
             placeholder="What needs to be done?"
@@ -19,7 +20,6 @@
             @keyup.enter="addTodo">
         </header>
         <section class="main" v-show="todos.length" v-cloak>
-            <input class="toggle-all" type="checkbox" v-model="allDone">
             <ul class="todo-list">
                 <li v-for="todo in filteredTodos"
                 class="todo"
@@ -46,7 +46,8 @@
         <ul class="filters">
             <li><a href="#/all" :class="{ selected: visibility == 'all' }">All</a></li>
             <li><a href="#/active" :class="{ selected: visibility == 'active' }">Active</a></li>
-            <li><a href="#/done" :class="{ selected: visibility == 'completed' }">Completed</a></li>
+            <li><a href="#/completed" :class="{ selected: visibility == 'completed' }">Completed</a></li>
+            <li><a href="#">Hostia</a></li>
         </ul>
         <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
             Clear completed
